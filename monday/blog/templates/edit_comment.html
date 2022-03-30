@@ -1,0 +1,20 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+    <form class="site-form has-background-light" method="post"
+          enctype="multipart/form-data" style="margin-top: 100px">
+        <div class="title is-2 has-text-centered">
+            edit comment
+        </div>
+        {% csrf_token %}
+        {{ form }}
+        <div class="has-text-centered mt-4">
+            <button class="button is-success" type="submit">
+                подтвердить
+            </button>
+            <a href="{% url 'blog:article_detail' article.slug %}" class="button is-dangers">
+                отмена
+            </a>
+        </div>
+    </form>
+{% endblock %}

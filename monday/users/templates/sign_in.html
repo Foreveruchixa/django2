@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+    <form class="site-form has-text-centered has-background-light " method="post">
+        <div class="title is-2 ">Войти</div>
+        {% csrf_token %}
+        {{ form }}
+        <button class="button is-success is-fullwidth mt-4" type="submit">
+            Войти
+        </button>
+        <p class="has-text-centered has-text-grey-light mt-2">
+            Don't have an account?
+            <br>
+            <a href="{% url 'users:sign_up' %}">Move to register page</a>
+        </p>
+    </form>
+{% endblock %}
